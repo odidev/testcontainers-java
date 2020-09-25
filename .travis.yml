@@ -1,5 +1,3 @@
-if: tag is present
-
 language: java
 jdk:
   - openjdk8
@@ -18,7 +16,7 @@ jobs:
       script: skip
       deploy:
         provider: script
-        script: ./gradlew -Pversion=$TRAVIS_TAG release --scan --no-daemon -i
+        script: ./gradlew release --scan --no-daemon -i
         on:
           tags: true
           branch: master
